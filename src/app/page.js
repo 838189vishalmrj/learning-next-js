@@ -1,15 +1,23 @@
-import styles from './page.module.css'
+"use client";
+import { useState } from "react";
+import styles from "./page.module.css";
 
 export default function Home() {
+  const [name, setName] = useState("Mohan");
+  const changeName = (value) => {
+    setName(value);
+    alert(`After chengin you name is ${name}`);
+  };
   return (
     <main className={styles.main}>
-      <SayHelloWorld />
-      <h1>hello next js</h1>
+      <h1>Event function and state {name}</h1>
+      <button onClick={() => changeName("Vishal")}>click</button>
+      <InnerComponent  />
     </main>
-  )
+  );
 }
 
 
-const SayHelloWorld = ()=>{
-  return <h>Hello World</h>
+const InnerComponent = ()=>{
+    return <h2>Inner Component</h2>
 }
