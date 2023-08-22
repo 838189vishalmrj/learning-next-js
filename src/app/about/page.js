@@ -10,7 +10,7 @@ const AboutComponent = ()=>{
 
     return (
         <>
-            <h1>About page | routing</h1>
+            <h1 className='heading'>About page | routing</h1>
             <button onClick={()=>router.push('/')}>Go to home page</button>
             <br />
             <Link href={'/about/aboutStudents'}> Go to about students page</Link>

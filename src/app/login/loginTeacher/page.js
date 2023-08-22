@@ -8,7 +8,7 @@ const page = () => {
     const router = useRouter()
   return (
     <div>
-        <h1>Teacher&rsquo;s login page</h1>
+        <h1 className='heading'>Teacher&rsquo;s login page</h1>
         <br />
         <button onClick={()=>router.push('/login')}>Go to login page</button>
     </div>
