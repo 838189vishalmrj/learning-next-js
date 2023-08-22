@@ -1,7 +1,7 @@
 "use client"
 
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import styles from '../page.module.css'
 
 
 const AboutComponent = ()=>{
@@ -9,10 +9,14 @@ const AboutComponent = ()=>{
     const router = useRouter()
 
     return (
-        <main className={styles.main}>
+        <>
             <h1>About page | routing</h1>
             <button onClick={()=>router.push('/')}>Go to home page</button>
-        </main>
+            <br />
+            <Link href={'/about/aboutStudents'}> Go to about students page</Link>
+            <br />
+            <Link href={'/about/aboutCollege'}> Go to about College page</Link>
+        </>
     )
 }
 
