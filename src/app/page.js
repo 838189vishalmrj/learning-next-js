@@ -1,23 +1,29 @@
 "use client";
-import { useState } from "react";
+
+import Link from "next/link";
 import styles from "./page.module.css";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [name, setName] = useState("Mohan");
-  const changeName = (value) => {
-    setName(value);
-    alert(`After chengin you name is ${name}`);
-  };
+  const router = useRouter();
+
+  const navigate = (name)=>{
+    router.push(name)
+  }
+
   return (
-    <main className={styles.main}>
-      <h1>Event function and state {name}</h1>
-      <button onClick={() => changeName("Vishal")}>click</button>
-      <InnerComponent  />
+    <main>
+      <h1>We are at home page</h1>
+      <br />
+      <br />
+      <Link href={"/login"}>Login page</Link>
+      <br />
+      <br />
+      <Link href={"/about"}>About page</Link>
+      <br />
+      <button onClick={() => navigate("/about")}>Go to About page</button>
+      <br />
+      <button onClick={() => navigate("/login")}>Go to Loign page</button>
     </main>
   );
-}
-
-
-const InnerComponent = ()=>{
-    return <h2>Inner Component</h2>
 }
